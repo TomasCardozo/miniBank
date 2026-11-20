@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${MINIBANK_DB_HOST:localhost}:${MINIBANK_DB_PORT:5432}/${MINIBANK_DB_NAME:minibank}
+    username: ${MINIBANK_DB_USERNAME:minibank}
+    password: ${MINIBANK_DB_PASSWORD:minibank}
+    driver-class-name: org.postgresql.Driver
+  flyway:
+    locations: classpath:db/migration,classpath:db/demo

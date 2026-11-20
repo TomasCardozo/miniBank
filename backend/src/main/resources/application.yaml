@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: miniBank
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:local}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,flyway
+  endpoint:
+    health:
+      show-details: when-authorized
+      roles: ADMIN
+
+minibank:
+  cors:
+    allowed-origins: http://localhost:5173
+  jwt:
+    secret: ${MINIBANK_JWT_SECRET:change-me-to-a-long-random-secret-before-real-use}
+    expiration: ${MINIBANK_JWT_EXPIRATION:3600000}

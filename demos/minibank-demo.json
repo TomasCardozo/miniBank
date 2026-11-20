@@ -1,0 +1,72 @@
+{
+  "url": "http://localhost:5173/login",
+  "style": {
+    "accent": "#0f8f73",
+    "padding": 0,
+    "radius": 0,
+    "shadow": false
+  },
+  "output": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "steps": [
+    {
+      "type": "ana@minibank.local",
+      "into": "label=Email",
+      "say": "MiniBank: un banco digital simple y seguro."
+    },
+    {
+      "type": "Demo1234!",
+      "into": "label=Password",
+      "secret": true
+    },
+    {
+      "click": "role=button[name='Iniciar sesion']",
+      "zoom": false
+    },
+    {
+      "wait": "text=Saldo ARS",
+      "zoom": false
+    },
+    {
+      "highlight": "role=region[name='Resumen financiero']",
+      "text": "Tu patrimonio en ARS y USD, de un vistazo",
+      "hold": 0.5
+    },
+    {
+      "click": "role=link[name='Transferir dinero']",
+      "zoom": false,
+      "say": "Transferir es cuestión de segundos."
+    },
+    {
+      "select": "label=Cuenta origen",
+      "option": "000000000001 - ARS - ana.ars.demo"
+    },
+    {
+      "type": "000000000003",
+      "into": "label=Numero de cuenta destino"
+    },
+    {
+      "click": "text=10%",
+      "say": "Montos sugeridos según tu saldo."
+    },
+    {
+      "click": "role=button[name='Siguiente Paso']",
+      "say": "Revisás los datos antes de confirmar."
+    },
+    {
+      "click": "role=button[name='Confirmar transferencia']"
+    },
+    {
+      "highlight": "role=status",
+      "text": "Listo: dinero enviado y registrado",
+      "hold": 1.5
+    }
+  ],
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  }
+}

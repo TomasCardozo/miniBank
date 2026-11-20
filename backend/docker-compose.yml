@@ -1,0 +1,23 @@
+name: minibank
+
+services:
+  postgres:
+    image: postgres:17.5
+    container_name: minibank-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${MINIBANK_DB_NAME:-minibank}
+      POSTGRES_USER: ${MINIBANK_DB_USERNAME:-minibank}
+      POSTGRES_PASSWORD: ${MINIBANK_DB_PASSWORD:-minibank}
+    ports:
+      - "${MINIBANK_DB_PORT:-5432}:5432"
+    volumes:
+      - minibank-postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  minibank-postgres-data:

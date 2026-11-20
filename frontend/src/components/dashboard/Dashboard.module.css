@@ -1,0 +1,533 @@
+.dashboard.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  min-height: 0;
+}
+
+.dashboard.dashboard > * {
+  flex: 0 0 auto;
+}
+
+.dashboard.dashboard > .dashboardGrid {
+  flex: 1 1 0;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: 0;
+}
+
+.hero h1 {
+  min-width: 0;
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+.visibilityButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  min-height: 2.2rem;
+  width: 2.2rem;
+  padding: var(--space-2);
+  border-color: var(--color-transparent);
+  background: var(--color-transparent);
+  color: var(--color-text-muted);
+}
+
+.visibilityButton:hover:not(:disabled) {
+  background: var(--color-surface-muted);
+  border-color: var(--color-transparent);
+  color: var(--color-primary-strong);
+}
+
+.muted {
+  color: var(--color-text-muted);
+}
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.summaryCard,
+.panel {
+  min-width: 0;
+}
+
+.summaryCard,
+.panel {
+  box-shadow: var(--shadow-sm);
+}
+
+.cardIcon {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 calc(var(--space-6) + var(--space-1));
+  width: calc(var(--space-6) + var(--space-1));
+  height: calc(var(--space-6) + var(--space-1));
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-muted);
+  color: var(--color-primary-strong);
+}
+
+.numericValue {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.4vw, 1.8rem);
+  font-weight: var(--text-h2-weight);
+  line-height: 1.1;
+}
+
+.dashboardGrid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: auto minmax(min-content, 1fr);
+  gap: var(--space-4);
+}
+
+.listPanel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.panelBody {
+  flex: 1 1 0;
+  min-height: 6rem;
+  overflow: hidden;
+  contain: size;
+}
+
+.panel {
+  grid-column: span 4;
+}
+
+.featurePanel {
+  grid-column: span 8;
+}
+
+.widePanel {
+  grid-column: span 8;
+}
+
+.panel :global(.loading-message) {
+  margin-bottom: var(--space-3);
+}
+
+.panel :global(.error-message) {
+  margin-bottom: var(--space-3);
+  box-shadow: none;
+}
+
+.chartHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.chartHeader > div:first-child {
+  flex: 1 1 14rem;
+  min-width: 0;
+}
+
+.chartNote {
+  margin: 0;
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-lh);
+}
+
+.rangeSwitch {
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: var(--space-1);
+  padding: var(--space-1);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-soft);
+}
+
+.rangeButton {
+  min-height: 2rem;
+  padding: var(--space-1) var(--space-3);
+  border-color: var(--color-transparent);
+  background: var(--color-transparent);
+  color: var(--color-text-muted);
+  font-family: var(--font-numeric);
+  font-size: var(--text-label-size);
+}
+
+.rangeButton:hover:not(:disabled) {
+  border-color: var(--color-transparent);
+  background: var(--color-surface-muted);
+  color: var(--color-primary-strong);
+}
+
+.rangeButton[aria-pressed='true'] {
+  border-color: var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-primary-strong);
+  box-shadow: var(--shadow-sm);
+}
+
+.chartRefreshing {
+  opacity: 0.6;
+  transition: opacity 150ms ease;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin: 0 0 var(--space-4);
+}
+
+.stat {
+  min-width: 0;
+}
+
+.statLabel {
+  color: var(--color-text-muted);
+  font-size: var(--text-caption-size);
+  line-height: var(--text-caption-lh);
+}
+
+.statValue {
+  margin: var(--space-1) 0 0;
+  font-family: var(--font-numeric);
+  font-size: var(--text-amount-sm-size);
+  font-weight: var(--text-amount-sm-weight);
+  line-height: var(--text-amount-sm-lh);
+  overflow-wrap: anywhere;
+}
+
+.statDetail {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-caption-size);
+  line-height: var(--text-caption-lh);
+}
+
+.positive {
+  color: var(--color-positive);
+}
+
+.negative {
+  color: var(--color-negative);
+}
+
+.chartFigure {
+  margin: 0;
+}
+
+.chart {
+  position: relative;
+  height: 11.2rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--color-transparent) 0 2.4rem,
+    var(--color-border-muted) calc(2.4rem + 1px),
+    var(--color-transparent) calc(2.4rem + 1.6px)
+  );
+  cursor: crosshair;
+  touch-action: pan-y;
+}
+
+.chart:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.plot {
+  position: absolute;
+  inset: var(--space-6) 0 var(--space-5);
+}
+
+.chartSvg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.chartArea {
+  fill: var(--color-chart-area);
+}
+
+.chartLine {
+  fill: none;
+  stroke: var(--color-primary);
+  stroke-width: 2.4px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.chartGuide {
+  stroke: var(--color-border-strong);
+  stroke-width: 1px;
+  stroke-dasharray: 3 3;
+}
+
+.chartOverlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.flowDot,
+.activeDot {
+  stroke: var(--color-surface);
+  stroke-width: 2px;
+}
+
+.flowDotIn {
+  fill: var(--color-positive);
+}
+
+.flowDotOut {
+  fill: var(--color-negative);
+}
+
+.activeDot {
+  fill: var(--color-primary);
+}
+
+.axisValue {
+  position: absolute;
+  left: var(--space-2);
+  color: var(--color-text-muted);
+  font-family: var(--font-numeric);
+  font-size: var(--text-caption-size);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.axisValueTop {
+  top: var(--space-1);
+}
+
+.axisValueBottom {
+  bottom: var(--space-1);
+}
+
+.chartTooltip {
+  position: absolute;
+  top: var(--space-2);
+  z-index: 1;
+  display: grid;
+  gap: var(--space-1);
+  min-width: 9rem;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-md);
+  font-family: var(--font-numeric);
+  font-size: var(--text-caption-size);
+  line-height: var(--text-caption-lh);
+  pointer-events: none;
+}
+
+.chartTooltipLeft {
+  left: var(--space-2);
+}
+
+.chartTooltipRight {
+  right: var(--space-2);
+}
+
+.chartAxis {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--text-caption-size);
+  line-height: var(--text-caption-lh);
+}
+
+.chartLegend {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.legendDot {
+  display: inline-block;
+  width: 0.55rem;
+  height: 0.55rem;
+  margin-left: var(--space-2);
+  border-radius: 50%;
+}
+
+.legendIn {
+  background: var(--color-positive);
+}
+
+.legendOut {
+  background: var(--color-negative);
+}
+
+.quickActions {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.quickAction {
+  justify-content: space-between;
+}
+
+.quickAction::after {
+  content: '›';
+  font-size: var(--text-h4-size);
+  line-height: 1;
+}
+
+.accountList,
+.activityList {
+  display: grid;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.accountItem,
+.activityItem {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-block: var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.accountItem,
+.activityItem {
+  padding-block: var(--space-3);
+}
+
+.accountItem a,
+.activityItem a,
+.itemMeta {
+  overflow-wrap: anywhere;
+}
+
+.accountItem:last-child,
+.activityItem:last-child {
+  border-bottom: 0;
+}
+
+.itemMeta {
+  margin: var(--space-1) 0 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-lh);
+}
+
+.itemAmount {
+  flex: 0 0 auto;
+  color: var(--color-text);
+  text-align: right;
+}
+
+@media (min-width: 80rem) {
+  .summaryCard,
+  .panel {
+    padding: var(--space-5);
+  }
+
+  .chart {
+    height: 12.8rem;
+  }
+}
+
+@media (max-width: 64rem) {
+  .summaryGrid,
+  .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .panel,
+  .featurePanel,
+  .widePanel {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 52rem) {
+  .featurePanel,
+  .widePanel,
+  .panel {
+    grid-column: 1 / -1;
+  }
+
+  .dashboard.dashboard > .dashboardGrid {
+    flex: 0 0 auto;
+  }
+
+  .dashboardGrid {
+    grid-template-rows: none;
+  }
+
+  .panelBody {
+    flex: 0 0 auto;
+    min-height: 0;
+    contain: none;
+  }
+}
+
+@media (max-width: 42rem) {
+  .summaryCard,
+  .panel {
+    padding: var(--space-3);
+  }
+
+  .summaryGrid,
+  .dashboardGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .panel,
+  .featurePanel,
+  .widePanel {
+    grid-column: auto;
+  }
+
+  .chart {
+    height: 9.6rem;
+  }
+
+  .chartHeader {
+    display: grid;
+  }
+
+  .rangeSwitch {
+    justify-self: start;
+  }
+
+  .accountItem,
+  .activityItem {
+    display: grid;
+  }
+
+  .itemAmount {
+    text-align: left;
+  }
+}

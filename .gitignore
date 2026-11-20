@@ -1,0 +1,10 @@
+# Framework de trabajo (docs, specs, roadmaps, diseño, requests): local, no versionado
+workspace/
+
+# Herramientas
+.idea/
+*.iml
+
+# Screenplay: capturas de prueba y storyboards
+demos/.screenplay/
+demos/*.storyboard.png

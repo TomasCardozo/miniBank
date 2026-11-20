@@ -1,0 +1,268 @@
+@font-face {
+  font-family: "Fraunces";
+  src: url("/fonts/fraunces-500.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("/fonts/fraunces-600.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("/fonts/plex-sans-400.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("/fonts/plex-sans-500.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("/fonts/plex-mono-400.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("/fonts/plex-mono-500.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+
+  --color-bg: #f8f6f0;
+  --color-transparent: transparent;
+  --color-content-bg: #fffcf6;
+  --color-surface: #ffffff;
+  --color-surface-muted: #eef3ee;
+  --color-text: #101715;
+  --color-text-muted: #52645f;
+  --color-border: #d7ded8;
+  --color-primary: #00684f;
+  --color-primary-hover: #00513d;
+  --color-primary-strong: #003f30;
+  --color-primary-contrast: #ffffff;
+  --color-focus: #28c39d;
+  --color-nav-active-bg: var(--color-primary-strong);
+  --color-nav-active-text: #ffffff;
+  --color-nav-icon-active-bg: rgb(255 255 255 / 0.14);
+  --color-nav-icon-active-border: rgb(255 255 255 / 0.28);
+  --color-theme-control-bg-dark: rgb(255 255 255 / 0.06);
+  --color-theme-control-hover-bg-dark: rgb(255 255 255 / 0.1);
+  --color-backdrop-bg: rgb(16 23 21 / 0.35);
+  --color-auth-card-border: rgb(255 255 255 / 0.16);
+  --color-auth-card-border-strong: #e5ad32;
+  --color-auth-card-bg: linear-gradient(
+    145deg,
+    rgb(5 18 22 / 0.82),
+    rgb(8 32 35 / 0.68)
+  );
+  --color-auth-card-text: #eef7f4;
+  --color-auth-kicker: #d8a84a;
+  --color-auth-heading: #ffffff;
+  --color-auth-text-muted: rgb(238 247 244 / 0.78);
+  --color-auth-label: rgb(238 247 244 / 0.88);
+  --color-auth-input-border: rgb(255 255 255 / 0.18);
+  --color-auth-input-bg: rgb(255 255 255 / 0.09);
+  --color-auth-input-hover-bg: rgb(255 255 255 / 0.12);
+  --color-auth-input-placeholder: rgb(238 247 244 / 0.52);
+  --color-auth-input-shadow: inset 0 1px 0 rgb(255 255 255 / 0.06);
+  --color-auth-focus-ring: rgb(40 195 157 / 0.18);
+  --color-auth-button-bg: #0f8f73;
+  --color-auth-button-border: #28c39d;
+  --color-auth-button-hover-bg: #28c39d;
+  --color-auth-button-hover-border: #5ad8bb;
+  --color-auth-spinner-track: rgb(238 247 244 / 0.24);
+  --color-auth-spinner-accent: #5ad8bb;
+  --color-auth-warning-text: #ffd166;
+  --color-auth-message-border: rgb(255 255 255 / 0.16);
+  --color-auth-message-bg: rgb(0 0 0 / 0.22);
+  --color-auth-message-text: rgb(238 247 244 / 0.86);
+  --color-chart-area: rgb(15 107 85 / 0.1);
+  --color-positive: #00684f;
+  --color-negative: #c92a2a;
+  --color-positive-on-dark: #2ff0b8;
+  --color-negative-on-dark: #ff4d4f;
+  --color-surface-soft: #f5f8f5;
+  --color-border-muted: #e7ede8;
+  --color-border-strong: #aebdb5;
+  --color-success-bg: #e8f6ef;
+  --color-success-border: #9dd8bd;
+  --color-success-text: #00684f;
+  --color-danger-bg: #fff0ef;
+  --color-danger-border: #f2aaa5;
+  --color-danger-text: #b42318;
+  --color-warning-bg: #fff7df;
+  --color-warning-border: #e7c766;
+  --color-warning-text: #765400;
+  --color-focus-ring: rgb(40 195 157 / 0.3);
+
+  --shadow-card: 0 0.6rem 1.4rem rgb(7 61 48 / 0.06);
+  --shadow-sm: 0 1px 0 rgb(16 23 21 / 0.03);
+  --shadow-md: var(--shadow-card);
+  --shadow-content: 0 1rem 2.4rem rgb(7 61 48 / 0.08);
+  --shadow-auth-focus:
+    0 0 0 4px var(--color-auth-focus-ring),
+    0 0 1.5rem var(--color-auth-focus-ring);
+  --shadow-auth-button: 0 0.75rem 1.75rem rgb(15 143 115 / 0.28);
+  --background-body-dark:
+    radial-gradient(circle at 15% -10%, rgb(40 195 157 / 0.1), transparent 55%),
+    radial-gradient(circle at 85% 0%, rgb(229 173 50 / 0.06), transparent 45%),
+    var(--color-bg);
+  --background-elevated-dark: linear-gradient(
+    145deg,
+    rgb(5 18 22 / 0.92),
+    rgb(8 32 35 / 0.82)
+  );
+  --background-table-head-dark: rgb(255 255 255 / 0.04);
+  --shadow-auth-card:
+    0 -1px 0 rgb(255 194 66 / 0.35), 0 1.75rem 5rem rgb(0 0 0 / 0.48),
+    inset 0 1px 0 rgb(255 255 255 / 0.08);
+
+  --space-0: 0;
+  --space-px: 1px;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-8: 3rem;
+  --space-10: 4rem;
+  --space-12: 5rem;
+
+  --radius-sm: 0.3rem;
+  --radius-md: 0.4rem;
+  --radius-lg: 0.6rem;
+
+  --font-display: "Fraunces", serif;
+  --font-body: "IBM Plex Sans", sans-serif;
+  --font-numeric: "IBM Plex Mono", monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.5rem;
+  --leading-tight: 1.15;
+  --leading-snug: 1.3;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.6;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+
+  --text-h1-size: 2rem;
+  --text-h1-weight: 600;
+  --text-h1-lh: 1.15;
+  --text-h2-size: 1.6rem;
+  --text-h2-weight: 600;
+  --text-h2-lh: 1.2;
+  --text-h3-size: 1.2rem;
+  --text-h3-weight: 500;
+  --text-h3-lh: 1.25;
+  --text-h4-size: 1rem;
+  --text-h4-weight: 500;
+  --text-h4-lh: 1.3;
+  --text-body-lg-size: 0.9rem;
+  --text-body-lg-weight: 400;
+  --text-body-lg-lh: 1.6;
+  --text-body-size: 0.8rem;
+  --text-body-weight: 400;
+  --text-body-lh: 1.6;
+  --text-body-sm-size: 0.7rem;
+  --text-body-sm-weight: 400;
+  --text-body-sm-lh: 1.5;
+  --text-caption-size: 0.6rem;
+  --text-caption-weight: 400;
+  --text-caption-lh: 1.4;
+  --text-label-size: 0.65rem;
+  --text-label-weight: 500;
+  --text-label-lh: 1.3;
+  --text-amount-xl-size: 1.8rem;
+  --text-amount-xl-weight: 500;
+  --text-amount-xl-lh: 1.1;
+  --text-amount-lg-size: 1.2rem;
+  --text-amount-lg-weight: 500;
+  --text-amount-lg-lh: 1.2;
+  --text-amount-size: 0.8rem;
+  --text-amount-weight: 400;
+  --text-amount-lh: 1.4;
+  --text-amount-sm-size: 0.65rem;
+  --text-amount-sm-weight: 400;
+  --text-amount-sm-lh: 1.4;
+
+  --z-topbar: 10;
+  --z-backdrop: 20;
+  --z-sidebar: 30;
+  --z-drawer: 40;
+  --z-modal: 50;
+
+  --table-head-height: 2.75rem;
+  --table-footer-height: 2.25rem;
+  --table-footer-button-height: 1.75rem;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-bg: #050f0e;
+  --color-transparent: transparent;
+  --color-content-bg: #071917;
+  --color-surface: #0a201f;
+  --color-surface-muted: #0f2b29;
+  --color-text: #eef7f4;
+  --color-text-muted: #9fb8b1;
+  --color-border: rgb(255 255 255 / 0.12);
+  --color-primary: #28c39d;
+  --color-primary-hover: #5ad8bb;
+  --color-primary-strong: #8ee8d0;
+  --color-primary-contrast: #06100d;
+  --color-focus: #5ad8bb;
+  --color-nav-active-bg: #073d30;
+  --color-nav-active-text: #ffffff;
+  --color-theme-control-bg-dark: rgb(255 255 255 / 0.06);
+  --color-theme-control-hover-bg-dark: rgb(255 255 255 / 0.1);
+  --color-auth-card-border: rgb(255 255 255 / 0.18);
+  --color-auth-card-bg: linear-gradient(
+    145deg,
+    rgb(5 18 22 / 0.84),
+    rgb(8 32 35 / 0.7)
+  );
+  --color-chart-area: rgb(40 195 157 / 0.14);
+  --color-positive: #8ee8d0;
+  --color-negative: #ff8787;
+  --color-surface-soft: #0c2623;
+  --color-border-muted: rgb(255 255 255 / 0.08);
+  --color-border-strong: rgb(255 255 255 / 0.2);
+  --color-success-bg: rgb(40 195 157 / 0.14);
+  --color-success-border: rgb(142 232 208 / 0.34);
+  --color-success-text: #8ee8d0;
+  --color-danger-bg: rgb(255 135 135 / 0.12);
+  --color-danger-border: rgb(255 135 135 / 0.32);
+  --color-danger-text: #ff8787;
+  --color-warning-bg: rgb(229 173 50 / 0.13);
+  --color-warning-border: rgb(229 173 50 / 0.34);
+  --color-warning-text: #ffd166;
+  --color-focus-ring: rgb(90 216 187 / 0.3);
+  --shadow-card:
+    0 1rem 2rem rgb(0 0 0 / 0.45), inset 0 1px 0 rgb(255 255 255 / 0.06);
+  --shadow-sm: 0 1px 0 rgb(255 255 255 / 0.04);
+  --shadow-md: var(--shadow-card);
+}

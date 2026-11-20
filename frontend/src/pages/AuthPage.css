@@ -1,0 +1,185 @@
+.auth-panel {
+  display: grid;
+  gap: var(--space-5);
+  color: var(--color-auth-card-text);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-lh);
+  text-align: center;
+}
+
+.auth-header {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.auth-kicker {
+  margin: 0;
+  color: var(--color-auth-kicker);
+  font-size: var(--text-label-size);
+  font-weight: var(--text-label-weight);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.auth-header h1 {
+  margin: 0;
+  color: var(--color-auth-heading);
+}
+
+.auth-header p,
+.auth-switch {
+  margin: 0;
+  color: var(--color-auth-text-muted);
+}
+
+.auth-form {
+  width: 100%;
+  max-width: none;
+}
+
+.auth-fieldset {
+  display: grid;
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.auth-field {
+  display: grid;
+  gap: var(--space-1);
+  margin: 0;
+  text-align: left;
+}
+
+.auth-field label {
+  margin: 0;
+  color: var(--color-auth-label);
+}
+
+.auth-field input {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-auth-input-border);
+  border-radius: var(--radius-md);
+  background: var(--color-auth-input-bg);
+  color: var(--color-auth-heading);
+  box-shadow: var(--color-auth-input-shadow);
+}
+
+.auth-field input::placeholder {
+  color: var(--color-auth-input-placeholder);
+}
+
+.auth-field input:focus {
+  border-color: var(--color-auth-button-border);
+  background: var(--color-auth-input-hover-bg);
+  box-shadow: var(--shadow-auth-focus);
+}
+
+.auth-login-form input:-webkit-autofill,
+.auth-login-form input:-webkit-autofill:hover,
+.auth-login-form input:-webkit-autofill:active {
+  border-color: var(--color-auth-input-border);
+  caret-color: var(--color-auth-heading);
+  -webkit-text-fill-color: var(--color-auth-heading);
+  -webkit-box-shadow:
+    0 0 0 1000px var(--color-auth-input-bg) inset,
+    var(--color-auth-input-shadow);
+  transition: background-color 999999s ease-in-out 0s;
+}
+
+.auth-login-form input:-webkit-autofill:focus {
+  border-color: var(--color-auth-button-border);
+  caret-color: var(--color-auth-heading);
+  -webkit-text-fill-color: var(--color-auth-heading);
+  -webkit-box-shadow:
+    0 0 0 1000px var(--color-auth-input-hover-bg) inset,
+    var(--shadow-auth-focus);
+  transition: background-color 999999s ease-in-out 0s;
+}
+
+.auth-primary-button {
+  justify-self: center;
+  width: min(100%, 16rem);
+  min-height: 2.75rem;
+  min-width: 2.75rem;
+  padding: var(--space-2) var(--space-3);
+  border-color: var(--color-auth-button-border);
+  border-radius: var(--radius-md);
+  background: var(--color-auth-button-bg);
+  color: var(--color-auth-heading);
+  box-shadow: var(--shadow-auth-button);
+}
+
+.auth-primary-button:hover:not(:disabled) {
+  border-color: var(--color-auth-button-hover-border);
+  background: var(--color-auth-button-hover-bg);
+}
+
+.auth-submit-slot {
+  display: grid;
+  justify-items: center;
+  min-height: 2.75rem;
+}
+
+.auth-spinner {
+  align-self: center;
+  width: 2rem;
+  height: 2rem;
+  border: 3px solid var(--color-auth-spinner-track);
+  border-top-color: var(--color-auth-spinner-accent);
+  border-radius: 999px;
+  animation: auth-spin 0.8s linear infinite;
+}
+
+.auth-credentials-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  margin: 0;
+  color: var(--color-auth-warning-text);
+  font-weight: var(--text-label-weight);
+  text-align: center;
+}
+
+@keyframes auth-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.auth-switch {
+  text-align: center;
+}
+
+.auth-switch a {
+  color: var(--color-auth-spinner-accent);
+}
+
+.auth-switch a:hover {
+  color: var(--color-primary-strong);
+}
+
+.auth-panel .error-message,
+.auth-panel .loading-message {
+  border: 1px solid var(--color-auth-message-border);
+  background: var(--color-auth-message-bg);
+  color: var(--color-auth-message-text);
+  box-shadow: none;
+  text-align: left;
+}
+
+.auth-panel .error-message h2,
+.auth-panel .error-message p,
+.auth-panel .error-message li {
+  color: inherit;
+}
+
+@media (max-width: 42rem) {
+  .auth-panel {
+    gap: var(--space-4);
+  }
+}

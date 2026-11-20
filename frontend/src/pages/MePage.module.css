@@ -1,0 +1,360 @@
+.page.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  min-width: 0;
+  min-height: 0;
+  color: var(--color-text);
+}
+
+.pageHeading {
+  display: grid;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.pageHeading h1 {
+  margin: 0;
+}
+
+.metadata {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-body-sm-size);
+}
+
+.emptyText {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.hero {
+  --hero-bg: var(--color-primary-strong);
+  --hero-text: var(--color-nav-active-text);
+  --hero-muted: color-mix(in srgb, var(--hero-text) 72%, var(--color-transparent));
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  background: var(--hero-bg);
+  box-shadow: var(--shadow-card);
+  color: var(--hero-text);
+}
+
+:global([data-theme="dark"]) .hero {
+  --hero-bg: var(--color-nav-active-bg);
+  --hero-muted: color-mix(in srgb, var(--hero-text) 74%, var(--color-transparent));
+}
+
+.identity {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.avatar {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 4rem;
+  height: 4rem;
+  border: 1px solid color-mix(in srgb, var(--hero-text) 30%, var(--color-transparent));
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--hero-text) 12%, var(--color-transparent));
+  color: var(--hero-text);
+  font-family: var(--font-numeric);
+  font-size: var(--text-h3-size);
+  font-weight: var(--text-label-weight);
+}
+
+.identityText {
+  display: grid;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.fullName {
+  overflow-wrap: anywhere;
+  color: var(--hero-text);
+  font-family: var(--font-display);
+  font-size: var(--text-h2-size);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-tight);
+}
+
+.email {
+  overflow-wrap: anywhere;
+  color: var(--hero-muted);
+}
+
+.badges {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.statusBadge {
+  gap: var(--space-2);
+  white-space: nowrap;
+}
+
+.statusDot {
+  display: inline-block;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: currentcolor;
+}
+
+.statusSuccess {
+  color: var(--color-success-text);
+}
+
+.statusDanger {
+  color: var(--color-danger-text);
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(16rem, 1fr);
+  gap: var(--space-4);
+  align-items: stretch;
+}
+
+.detailCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 2.5rem;
+}
+
+.cardHeader .iconTextButton {
+  margin-block: 0;
+}
+
+.cardTitle {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-size: var(--text-label-size);
+  font-weight: var(--text-label-weight);
+  letter-spacing: 0.08em;
+  line-height: var(--text-label-lh);
+  text-transform: uppercase;
+}
+
+.copyFeedback {
+  flex: 1 1 auto;
+  margin: 0;
+  text-align: right;
+  color: var(--color-text-muted);
+  font-size: var(--text-body-sm-size);
+}
+
+.iconTextButton {
+  gap: var(--space-2);
+}
+
+.infoList {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-3);
+  margin: 0;
+}
+
+.infoRow {
+  display: grid;
+  grid-template-columns: minmax(8rem, 0.4fr) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-3);
+  min-width: 0;
+  min-height: 2.2rem;
+}
+
+.infoRow dt {
+  color: var(--color-text-muted);
+  font-size: var(--text-body-sm-size);
+}
+
+.infoRow dd {
+  margin: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: var(--color-text);
+}
+
+.infoValueRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.textValue {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.numericValue {
+  font-family: var(--font-numeric);
+  font-variant-numeric: tabular-nums;
+}
+
+.rowActions {
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: var(--space-2);
+  margin-left: auto;
+}
+
+.accessPanel {
+  display: grid;
+  align-content: start;
+  gap: var(--space-2);
+}
+
+.accessPanel .cardHeader {
+  margin-bottom: var(--space-2);
+}
+
+.accessLink,
+.accessLink:hover {
+  color: var(--color-text);
+}
+
+.accessLink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+}
+
+.accessLink:hover {
+  border-color: var(--color-primary-hover);
+  background: var(--color-surface-muted);
+}
+
+.accessLink:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.accessIcon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-muted);
+  color: var(--color-primary-strong);
+}
+
+.accessText {
+  display: grid;
+  flex: 1 1 auto;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.accessTitle {
+  font-weight: var(--font-medium);
+}
+
+.accessDescription {
+  color: var(--color-text-muted);
+  font-size: var(--text-body-sm-size);
+  font-weight: var(--font-normal);
+}
+
+.accessChevron {
+  flex: 0 0 auto;
+  color: var(--color-text-muted);
+}
+
+.pageFooter {
+  margin-top: auto;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.technicalList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-6);
+  margin: 0;
+}
+
+.technicalList > div {
+  display: grid;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.technicalList dt {
+  color: var(--color-text-muted);
+  font-size: var(--text-label-size);
+  font-weight: var(--text-label-weight);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.technicalList dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: var(--color-text-muted);
+  font-family: var(--font-numeric);
+  font-size: var(--text-body-sm-size);
+}
+
+@media (max-width: 64rem) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 42rem) {
+  .hero {
+    display: grid;
+    justify-content: stretch;
+  }
+
+  .avatar {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  .infoRow {
+    grid-template-columns: 1fr;
+    gap: var(--space-1);
+  }
+
+  .cardHeader {
+    flex-wrap: wrap;
+  }
+
+  .cardHeader .iconTextButton {
+    width: auto;
+    margin-left: auto;
+  }
+
+  .cardHeader .copyFeedback {
+    order: 1;
+    flex-basis: 100%;
+    text-align: left;
+  }
+}

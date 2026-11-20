@@ -1,0 +1,15 @@
+package minibank.minibank.audit.entity;
+
+public enum AuditAction {
+    LOGIN_SUCCESS,
+    LOGIN_FAILURE,
+    TRANSFER_CREATED,
+    TRANSFER_COMPLETED,
+    TRANSFER_REJECTED,
+    DAILY_LIMIT_UPDATED,
+    ACCOUNT_BLOCKED,
+    ACCOUNT_ACTIVATED,
+    ACCOUNT_CREDITED,
+    USER_BLOCKED,
+    USER_ACTIVATED
+}
